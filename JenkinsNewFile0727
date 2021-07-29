@@ -9,7 +9,7 @@ node{
 	{
 	sh "${mavenHome}/bin/mvn clean package"
 	}
-	//stage('SonarQubeReport')
+	stage('SonarQubeReport')
 	{
 	sh "${mavenHome}/bin/mvn sonar:sonar"
 	}
@@ -30,5 +30,5 @@ node{
 
 	Regards,
 	Nagul Jogani.''', subject: 'Build over!!!', to: 'babanagul@gmail.com,babanagul.jogani@gmail.com'
-	}//	
+	}
 }
