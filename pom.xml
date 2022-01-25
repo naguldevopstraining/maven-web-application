@@ -97,7 +97,7 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>walmart Release Repository</name>
+	      <name>Walmart Release Repository</name>
 	      <url>http://13.126.133.156:8081/repository/walmart-release/</url>
 	    </repository>
 	    
