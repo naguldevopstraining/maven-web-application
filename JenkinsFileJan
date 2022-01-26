@@ -1,0 +1,24 @@
+node{
+    
+    def mavenHome = tool name: "maven3.6.3"
+    
+    stage('CheckoutCode'){
+       git branch: 'development', credentialsId: '738c01be-0fa2-4f1c-87d2-29ecd487905c', url: 'https://github.com/naguldevopstraining/maven-web-application.git' 
+    }
+    stage('BuildArtifact'){
+        sh "${mavenHome}/bin/mvn clean package"
+    }
+   /*
+   stage('SonarQube report'){
+        sh "${mavenHome}/bin/mvn sonar:sonar"
+    }
+    stage('Nexus Upload'){
+        sh "${mavenHome}/bin/mvn deploy"
+    }
+    stage('Tomcat Deloyment'){
+        sshagent(['ffab7c30-e4dd-474b-b430-a68806b9b622']) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.232.233.68:/opt/apache-tomcat-9.0.58/webapps/"
+}
+    }
+   */
+}
